@@ -6,14 +6,38 @@
 </head>
 
 <body>
+
 <h1>Rock, Paper, Scissors!</h1>
+
+<h2>Feeling lucky? Pick your play . . .</h2>
+
+<input class="playerChoice" type="button" value="Rock" ID="1" önclick="return playerPlay(this.value)">
+<input class="playerChoice" type="button" value="Paper" ID="2">
+<input class="playerChoice" type="button" value="Scissors" ID="3">
+
+</div>
+
 <script>
 
-function computerPlay(items) {
-    return items[Math.floor(math.random()*items.length)];
+let btns = document.querySelectorAll("input");
+for(i of btns) {
+    i.addEventListener('click', function playerPlay(value){
+        alert('Hello World!');
+    });
 }
-const items = [rock, paper, scissors];
-console.log(computerPlay(items));
+//btns.addEventListener("click", function(){ alert("Hello World!") });
+let computerSelection = function computerPlay(items) {
+    return items[Math.floor(Math.random()*items.length)];
+}
+const items = ["rock", "paper", "scissors"];
+
+//document.addEventListener("click", playerPlay);
+
+//let playerSelection = function playerPlay() {
+//    return value
+//}
+
+console.log(playerSelection)
 
 </script>
 </body>
