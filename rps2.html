@@ -3,10 +3,15 @@
 <head>
     <meta charset="utf-8">
     <title>Rock, Paper, Scissors!</title>
+    <style>
+        body
+{
+    text-align: center
+}
+    </style>
 </head>
 
 <body>
-
 <h1>Rock, Paper, Scissors!</h1>
 
 <h2>Feeling lucky? Pick your play . . .</h2>
@@ -16,9 +21,12 @@
 <button class="playerChoice" value="Scissors" ID="3" onclick="pickScissors()">Scissors</button>
 
 <h2>Computer choice:</h2>
-<div>Rock</div>
-<div>Paper</div>
-<div>Scissors</div>
+<div id="div1">Rock</div>
+<div id="div2">Paper</div>
+<div id="div3">Scissors</div>
+
+<h2>And the winner is . . .</h2>
+<div id="outcomeText">hit a button already!</div>
 
 <script>
 
@@ -29,6 +37,25 @@ function pickRock() {
     console.log(playerSelect);
     computerSelection = computerPlay(items);
     console.log(computerSelection);
+
+    if (computerSelection === "paper") {
+    document.getElementById("div1").style.color = "black";
+    document.getElementById("div2").style.color = "green";
+    document.getElementById("div3").style.color = "black";
+    document.getElementById("outcomeText").innerHTML = "the computer!";
+    }
+    if (computerSelection === "scissors") {
+    document.getElementById("div1").style.color = "black";
+    document.getElementById("div2").style.color = "black";
+    document.getElementById("div3").style.color = "red";
+    document.getElementById("outcomeText").innerHTML = "YOU!";
+    }
+    if (computerSelection === "rock") {
+    document.getElementById("div1").style.color = "lightGray";
+    document.getElementById("div2").style.color = "black";
+    document.getElementById("div3").style.color = "black";
+    document.getElementById("outcomeText").innerHTML = "Rocks just knock, it's a draw :(";
+    }
 }
 
 function pickPaper() {
@@ -36,6 +63,25 @@ function pickPaper() {
     console.log(playerSelect);
     computerSelection = computerPlay(items);
     console.log(computerSelection);
+
+    if (computerSelection === "paper") {
+    document.getElementById("div1").style.color = "black";
+    document.getElementById("div2").style.color = "lightGray";
+    document.getElementById("div3").style.color = "black";
+    document.getElementById("outcomeText").innerHTML = "Paper rests on paper, it's a draw :(";
+    }
+    if (computerSelection === "scissors") {
+    document.getElementById("div1").style.color = "black";
+    document.getElementById("div2").style.color = "black";
+    document.getElementById("div3").style.color = "green";
+    document.getElementById("outcomeText").innerHTML = "the computer!";
+    }
+    if (computerSelection === "rock") {
+    document.getElementById("div1").style.color = "red";
+    document.getElementById("div2").style.color = "black";
+    document.getElementById("div3").style.color = "black";
+    document.getElementById("outcomeText").innerHTML = "YOU!!";
+    }
 }
 
 function pickScissors() {
@@ -43,6 +89,25 @@ function pickScissors() {
     console.log(playerSelect);
     computerSelection = computerPlay(items);
     console.log(computerSelection);
+
+    if (computerSelection === "paper") {
+    document.getElementById("div1").style.color = "black";
+    document.getElementById("div2").style.color = "red";
+    document.getElementById("div3").style.color = "black";
+    document.getElementById("outcomeText").innerHTML = "YOU!!";
+    }
+    if (computerSelection === "scissors") {
+    document.getElementById("div1").style.color = "black";
+    document.getElementById("div2").style.color = "black";
+    document.getElementById("div3").style.color = "green";
+    document.getElementById("outcomeText").innerHTML = "scissors match scissors, it's a draw :(";
+    }
+    if (computerSelection === "rock") {
+    document.getElementById("div1").style.color = "green";
+    document.getElementById("div2").style.color = "black";
+    document.getElementById("div3").style.color = "black";
+    document.getElementById("outcomeText").innerHTML = "the computer!";
+    }
 }
 
 let computerSelection = "none"
@@ -51,5 +116,10 @@ function computerPlay(items) {
     return items[Math.floor(Math.random()*items.length)];
 }
 const items = ["rock", "paper", "scissors"];
+
+if (computerSelection.value === "paper") {
+    //document.getElementById("div2").style.color = "green";
+    alert("hi");
+}
 
 </script>
