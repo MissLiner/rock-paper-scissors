@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Rock, Paper, Scissors!</title>
+</head>
+
+<body>
+
+<h1>Rock, Paper, Scissors!</h1>
+
+<h2>Feeling lucky? Pick your play . . .</h2>
+
+<button class="playerChoice" value="Rock" ID="1" onclick="pickRock()">Rock</button>
+<button class="playerChoice" value="Paper" ID="2" onclick="pickPaper()">Paper</button>
+<button class="playerChoice" value="Scissors" ID="3" onclick="pickScissors()">Scissors</button>
+
+<h2>Computer choice:</h2>
+<div>Rock</div>
+<div>Paper</div>
+<div>Scissors</div>
+
+<script>
+
+let playerSelect = "none";
+
+function pickRock() {
+    playerSelect = "Rock";
+    console.log(playerSelect)
+}
+
+function pickPaper() {
+    playerSelect = "Paper";
+    console.log(playerSelect)
+}
+
+function pickScissors() {
+    playerSelect = "Scissors";
+    console.log(playerSelect)
+}
+
+let computerSelection = 
+
+function computerPlay(items) {
+    return items[Math.floor(Math.random()*items.length)];
+}
+const items = ["rock", "paper", "scissors"];
+
+</script>
