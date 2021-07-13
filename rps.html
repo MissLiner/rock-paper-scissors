@@ -11,20 +11,56 @@
 
 <h2>Feeling lucky? Pick your play . . .</h2>
 
-<input class="playerChoice" type="button" value="Rock" ID="1" önclick="return playerPlay(this.value)">
+<button class="playerChoice" value="Rock" ID="1" önclick="playerPlay()">Rock</button>
 <input class="playerChoice" type="button" value="Paper" ID="2">
 <input class="playerChoice" type="button" value="Scissors" ID="3">
 
 </div>
 
 <script>
+    let playerSelect = document.getElementById("1").value();
 
-let btns = document.querySelectorAll("input");
-for(i of btns) {
-    i.addEventListener('click', function playerPlay(value){
-        alert('Hello World!');
-    });
+    
+    //let playerSelect = returnValue1.value;
+    //console.log(playerSelect);
+
+    function playerPlay() {
+    alert(playerSelect);
 }
+//document.getElementsByClassName("playerChoice").click(function() {
+//    let playerPlay = document.getElementsByClassName(this).val();
+ //   alert(playerPlay);
+//});
+
+//let pRock = document.getElementById("1");
+//let pPaper = document.getElementById("2");
+//let pScissors = document.getElementById("3");
+
+//document.addEventListener("click", )
+
+//pRock.onclick(console.log("Rock"));
+
+//formula playerPlay(button) {
+
+//}
+//let btns = document.querySelectorAll("input");
+//for(button of btns) {
+//    btns.onclick = console.log(button.id);
+//}
+//function playerSelection() {
+//function getValue(btnValue) {
+//
+//}
+
+//for(button of btns) {
+    //button.addEventListener('click', console.log(button.id));
+    //function playerPlay(button) {
+        //return(button.value);
+        //getElementByClass("playerChoice").id
+        //console.log();
+    
+ //   };
+//let playerSelection = playerPlay()
 //btns.addEventListener("click", function(){ alert("Hello World!") });
 let computerSelection = function computerPlay(items) {
     return items[Math.floor(Math.random()*items.length)];
@@ -37,7 +73,6 @@ const items = ["rock", "paper", "scissors"];
 //    return value
 //}
 
-console.log(playerSelection)
 
 </script>
 </body>
