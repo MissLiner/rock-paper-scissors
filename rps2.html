@@ -26,20 +26,26 @@ let playerSelect = "none";
 
 function pickRock() {
     playerSelect = "Rock";
-    console.log(playerSelect)
+    console.log(playerSelect);
+    computerSelection = computerPlay(items);
+    console.log(computerSelection);
 }
 
 function pickPaper() {
     playerSelect = "Paper";
-    console.log(playerSelect)
+    console.log(playerSelect);
+    computerSelection = computerPlay(items);
+    console.log(computerSelection);
 }
 
 function pickScissors() {
     playerSelect = "Scissors";
-    console.log(playerSelect)
+    console.log(playerSelect);
+    computerSelection = computerPlay(items);
+    console.log(computerSelection);
 }
 
-let computerSelection = 
+let computerSelection = "none"
 
 function computerPlay(items) {
     return items[Math.floor(Math.random()*items.length)];
