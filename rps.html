@@ -15,14 +15,31 @@
 
 <script>  
 
-let playerSelection = "rock"
+const playerSelection = "paper";
 
-let computerSelection = function computerPlay(items) {
-    return items[Math.floor(Math.random()*items.length)];
-}
+const computerSelection = "rock";
+
+//function computerPlay(items) {
+//    return items[Math.floor(Math.random()*items.length)];
+//    console.log(computerSelection);
+//}
 const items = ["rock", "paper", "scissors"];
 
-
+//function playRound(playerSelection, computerSelection) {
+    if (playerSelection === computerSelection) {
+        console.log("It's a draw!");
+    }
+    //else if ((playerSelection === "rock" && computerSelection === "scissors") || 
+      //      (playerSelection === "paper" && computerSelection === "rock") ||
+       //     (playerSelection === "scissors" && computerSelection === "paper")) {
+        //console.log("You win!");
+    //}
+    //else if ((playerSelection === "rock" && computerSelection === "paper") || 
+      //      (playerSelection === "paper" && computerSelection === "scissors") ||
+        //    (playerSelection === "scissors" && computerSelection === "rock")) {
+        //console.log("You lose!");
+    //}
+//}
 
 
 </script>
