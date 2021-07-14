@@ -5,9 +5,36 @@
     <title>Rock, Paper, Scissors!</title>
     <style>
         body
-{
-    text-align: center
-}
+        {
+        font-family: Arial, Helvetica, sans-serif;
+        text-align: center
+        }
+
+        button
+        {
+            font-size: 20px;
+        }
+
+        div
+        {
+            font-size: 20px;
+            padding: 10px;
+        }
+
+        .box 
+        {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    
+        }
+
+        .compChoices
+        {
+            border: 2px solid black;
+            border-radius: 25px;
+        }
+
     </style>
 </head>
 
@@ -16,14 +43,16 @@
 
 <h2>Feeling lucky? Pick your play . . .</h2>
 
-<button class="playerChoice" value="Rock" ID="1" onclick="pickRock()">Rock</button>
+<button class="playerChoice" value="Rock" ID="1" onclick="pickRock()" onclick="bold()">Rock</button>
 <button class="playerChoice" value="Paper" ID="2" onclick="pickPaper()">Paper</button>
 <button class="playerChoice" value="Scissors" ID="3" onclick="pickScissors()">Scissors</button>
 
 <h2>Computer choice:</h2>
-<div id="div1">Rock</div>
-<div id="div2">Paper</div>
-<div id="div3">Scissors</div>
+<div class="box">
+    <div class="compChoices" id="div1">Rock</div>
+    <div class="compChoices" id="div2">Paper</div>
+    <div class="compChoices" id="div3">Scissors</div>
+</div>
 
 <h2>And the winner is . . .</h2>
 <div id="outcomeText">hit a button already!</div>
@@ -31,19 +60,33 @@
 <script>
 
 let playerSelect = "none";
+let computerSelection = "none";
+const items = ["rock", "paper", "scissors"];
+
+function computerPlay(items) {
+    return items[Math.floor(Math.random()*items.length)];
+}
 
 function pickRock() {
     playerSelect = "Rock";
     console.log(playerSelect);
     computerSelection = computerPlay(items);
     console.log(computerSelection);
+    function bold() {
+        document.getElementById("1").style.fontWeight = "bold";  
+    }
+
+    function bold() {
+        document.getElementById(this).style.fontWeight = "bold";  
+    }
 
     if (computerSelection === "paper") {
-    document.getElementById("div1").style.color = "black";
-    document.getElementById("div2").style.color = "green";
-    document.getElementById("div3").style.color = "black";
-    document.getElementById("outcomeText").innerHTML = "the computer!";
-    }
+        document.getElementById("div1").style.color = "black";
+        document.getElementById("div2").style.color = "green";
+        document.getElementById("div3").style.color = "black";
+        document.getElementById("outcomeText").innerHTML = "the computer!";
+        }
+
     if (computerSelection === "scissors") {
     document.getElementById("div1").style.color = "black";
     document.getElementById("div2").style.color = "black";
@@ -110,16 +153,6 @@ function pickScissors() {
     }
 }
 
-let computerSelection = "none"
 
-function computerPlay(items) {
-    return items[Math.floor(Math.random()*items.length)];
-}
-const items = ["rock", "paper", "scissors"];
-
-if (computerSelection.value === "paper") {
-    //document.getElementById("div2").style.color = "green";
-    alert("hi");
-}
 
 </script>
