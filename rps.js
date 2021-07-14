@@ -4,18 +4,18 @@ let playerSelection = "none";
 let computerSelection = "none";
 const items = ["rock", "paper", "scissors"];
 
-function playerPlay() {
+function playPlayer() {
     let playerEntry = window.prompt("Will you choose rock, paper, or scissors?", "enter choice here . . .");
     playerSelection = playerEntry.toLowerCase();
 }
 
-function computerPlay(items) {
+function playComputer(items) {
     return items[Math.floor(Math.random()*items.length)];
 }
 
 function playRound() {
-    computerSelection = computerPlay(items);
-    playerPlay();
+    computerSelection = playComputer(items);
+    playPlayer();
     console.log("You chose: " + playerSelection);
     console.log("Computer chose: " + computerSelection);
 
@@ -38,7 +38,7 @@ function playRound() {
     }
 }
 
-function game() {
+function playGame() {
     for (let i=0; i < 5;i++)this.playRound();
 
     if (playerScore > computerScore) {
@@ -54,4 +54,4 @@ function game() {
     }
 }
     
-game();
+playGame();
