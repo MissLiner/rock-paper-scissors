@@ -18,10 +18,13 @@
 const playerSelection = "paper";
 const items = ["rock", "paper", "scissors"];
 
-const computerSelection = items[Math.floor(Math.random()*items.length)];
+let computerSelection = "none";
 
-
+function computerPlay(items) {
+    return items[Math.floor(Math.random()*items.length)];
+}
 function playRound() {
+    computerSelection = computerPlay(items);
     console.log("You chose: " + playerSelection);
     console.log("Computer chose: " + computerSelection);
     if (playerSelection === computerSelection) {
@@ -39,9 +42,11 @@ function playRound() {
             (playerSelection === "scissors" && computerSelection === "rock")) {
         console.log("You lose!");
             }}
-
-    playRound();
-
+  
+    function game() {
+        for (let i=0; i < 5;i++)this.playRound();
+    }
+    game();
 
 </script>
 </body>
