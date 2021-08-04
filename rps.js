@@ -17,8 +17,11 @@ gamePlay.appendChild(computerChoice);
 const gameResult = document.createElement('p');
 gamePlay.appendChild(gameResult);
 
-const roundResult = document.createElement('p');
-gamePlay.appendChild(roundResult);
+const currentScore = document.createElement('p');
+gamePlay.appendChild(currentScore);
+
+const finalResult = document.createElement('p');
+gamePlay.appendChild(finalResult);
 
 function playComputer(items) {
     return items[Math.floor(Math.random()*items.length)];
@@ -31,6 +34,12 @@ function playRound() {
     playerChoice.textContent = "You chose: " + playerSelection;    
     computerChoice.textContent =  "Computer chose: " + computerSelection;
 
+    if (playerScore === 5 || computerScore === 5) {
+        playerScore = 0;
+        computerScore = 0;
+        finalResult.textContent = "";
+    }
+
     if (playerSelection === computerSelection) {
         gameResult.textContent = "It's a draw!";
         }
@@ -38,15 +47,23 @@ function playRound() {
     else if ((playerSelection === "rock" && computerSelection === "scissors") || 
            (playerSelection === "paper" && computerSelection === "rock") ||
             (playerSelection === "scissors" && computerSelection === "paper")) {
-            gameResult.textContent = "You win!";
+            gameResult.textContent = "Point to you :)";
             playerScore = ++playerScore;
+            
+            if (playerScore === 5) {
+                finalResult.textContent = "YOU WON THE ROUND!";
+            }
             }
 
     else if ((playerSelection === "rock" && computerSelection === "paper") || 
             (playerSelection === "paper" && computerSelection === "scissors") ||
             (playerSelection === "scissors" && computerSelection === "rock")) {
-            gameResult.textContent = "You lose!";
+            gameResult.textContent = "Point to the computer :(";
             computerScore = ++computerScore;
+
+            if (computerScore === 5) {
+                finalResult.textContent = "Wah, computer won the round";
+            }
             }
 }
 
@@ -54,15 +71,15 @@ function playGame() {
     this.playRound();
 
     if (playerScore > computerScore) {
-        roundResult.textContent = "Current score, computer: " + computerScore + ", you: " + playerScore;
+        currentScore.textContent = "Current score, computer: " + computerScore + ", you: " + playerScore;
         }
 
     else if (computerScore > playerScore) {
-        roundResult.textContent = "Current score, computer: " + computerScore + ", you: " + playerScore;
+        currentScore.textContent = "Current score, computer: " + computerScore + ", you: " + playerScore;
         }
 
     else {
-        roundResult.textContent = "Current score, computer: " + computerScore + ", you: " + playerScore;
+        currentScore.textContent = "Current score, computer: " + computerScore + ", you: " + playerScore;
         }
 }
 
