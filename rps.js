@@ -29,18 +29,13 @@ function playComputer(items) {
 
 function playRound() {
     computerSelection = playComputer(items);
-    //playPlayer();
 
     playerChoice.textContent = "You chose: " + playerSelection;    
     computerChoice.textContent =  "Computer chose: " + computerSelection;
 
-    if (playerScore === 5 || computerScore === 5) {
-        playerScore = 0;
-        computerScore = 0;
-        finalResult.textContent = "";
-    }
+   
 
-    if (playerSelection === computerSelection) {
+   if (playerSelection === computerSelection) {
         gameResult.textContent = "It's a draw!";
         }
 
@@ -51,9 +46,15 @@ function playRound() {
             playerScore = ++playerScore;
             
             if (playerScore === 5) {
-                finalResult.textContent = "YOU WON THE ROUND!";
+                finalResult.textContent = "YOU WON THE ROUND " + playerScore + " to " + computerScore + "!";
+                playerScore = 0;
+                computerScore = 0;
             }
+
+            else {
+                finalResult.textContent = "Who will get to five first?";
             }
+    }
 
     else if ((playerSelection === "rock" && computerSelection === "paper") || 
             (playerSelection === "paper" && computerSelection === "scissors") ||
@@ -62,9 +63,15 @@ function playRound() {
             computerScore = ++computerScore;
 
             if (computerScore === 5) {
-                finalResult.textContent = "Wah, computer won the round";
+                finalResult.textContent = "Wah, computer won the round, " + computerScore + " to " + playerScore + " :(";
+                playerScore = 0;
+                computerScore = 0;
             }
+
+            else {
+                finalResult.textContent = "Who will get to five first?";
             }
+    }
 }
 
 function playGame() {
